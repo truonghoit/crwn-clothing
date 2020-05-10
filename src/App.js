@@ -7,7 +7,7 @@ import Header from './components/header/header.component';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import './App.css';
 import {auth, createUserProfileDocument} from '../src/firebase/firebase.utils';
-import { setCurrentUser } from './redux/user/user.action';
+import { setCurrentUser } from './redux/user/user.actions';
 
 class App extends React.Component {
   constructor(){
@@ -54,7 +54,7 @@ class App extends React.Component {
           <Route path='/' exact component={HomePage}/>
           <Route path='/shop' exact component={ShopPage}/>
           <Route path='/signIn' exact
-                 render={()=>currentUser?(<Redirect to={'/'} />):(<SignInAndSignUpPage />)}
+                 render={()=>currentUser?<Redirect to={'/'} />:<SignInAndSignUpPage />}
           />
         </Switch>
       </div>

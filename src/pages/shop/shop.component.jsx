@@ -1,6 +1,6 @@
 import React from 'react';
 import SHOP_DATA from './shop.data';
-import CollectionPreview from '../../components/preview-collection/preview-collection.components';
+import CollectionPreview from '../../components/preview-collection/collection-preview.components';
 class ShopPage extends React.Component {
   constructor(){
     super();
@@ -10,7 +10,6 @@ class ShopPage extends React.Component {
   }
   render() {
     const { collections } = this.state;
-    console.log("collections: ", collections);
     return (
       <div className='shop-page'>
         {
